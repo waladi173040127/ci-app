@@ -6,11 +6,7 @@
 			    Form Tambah Data mahasiswa
 			  </div>
 			  <div class="card-body">
-			  		<?php if(validation_errors()) : ?>
-			  			<div class="alert alert-danger" role="alert">
-			  				<?= validation_errors(); ?>
-			  			</div>
-			  		<?php endif; ?>
+			  		
 			  		<form action="" method="post">
 						 <div class="form-group">
 						    <label for="nama">Nama </label>
@@ -18,7 +14,7 @@
 						  </div>
 						  <div class="form-group">
 						    <label for="nrp">NRP </label>
-						    <input type="number" name="nrp" class="form-control" id="nrp" >
+						    <input type="text" name="nrp" class="form-control" id="nrp" >
 						  </div>
 						  <div class="form-group">
 						    <label for="email">E-mail </label>
