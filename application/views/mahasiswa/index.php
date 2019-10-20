@@ -16,8 +16,23 @@
   			<div class="col-md-6">
 			<a href="<?php base_url(); ?>mahasiswa/tambah" class="btn btn-primary">Tambah Data Mahasiswa</a>
 		</div>
+
+		
   			<div class="col-10">
+  				<div class="row mt-3">
+			        <div class="col-md-6">
+			            <form action="" method="post">
+			                <div class="input-group">
+			                    <input type="text" class="form-control" placeholder="Cari data mahasiswa.." name="keyword">
+			                    <div class="input-group-append">
+			                        <button class="btn btn-primary" type="submit">Cari</button>
+			                    </div>
+			                </div>
+			            </form>
+			        </div>
+			    </div>
   				<h3>Daftar Mahasiswa</h3>
+  					
 				<table class="table">
 				  <thead class="thead-light">
 				    <tr>
@@ -27,9 +42,15 @@
 				      <th scope="col">E-mail</th>
 				      <th scope="col">Jurusan</th>
 				      <th scope="col" ><center>Menu</center></th>
+				      <?php if (empty($mahasiswa)) : ?>
+                		<div class="alert alert-danger" role="alert">
+                			data mahasiswa tidak ditemukan.
+                		</div>
+            		<?php endif; ?>
 				    </tr>
 				  </thead>
 				  <tbody>
+
 				  	<?php $i=0; ?>
 				  	<?php foreach ($mahasiswa as $mhs) : ?>
 				    <tr>
@@ -41,8 +62,8 @@
 				      <td><?= $mhs['jurusan']; ?></td>
 				      <td>
 				      	<a href="<?= base_url(); ?>mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge badge-danger float-right ml-1" onclick="return confirm('apakah anda yakin ingin menghapus data ini ?')">Hapus</a>
-				      	<a href="" class="badge badge-success float-right ml-1">Ubah</a>
-				      	<a href="" class="badge badge-primary float-right ml-1">Detail</a>
+				      	<a href="<?= base_url(); ?>mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge badge-success float-right ml-1">Ubah</a>
+				      	<a href="<?= base_url(); ?>mahasiswa/detail/<?= $mhs['id']; ?>" class="badge badge-primary float-right ml-1">Detail</a>
 				      </td>
 				    </tr>
 					<?php endforeach ?>
