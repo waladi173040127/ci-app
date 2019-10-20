@@ -33,7 +33,8 @@
 			    </div>
   				<h3>Daftar Mahasiswa</h3>
   					
-				<table class="table">
+				
+				  	<?php $i=0; ?><table class="table">
 				  <thead class="thead-light">
 				    <tr>
 				      <th scope="col">#</th>
@@ -51,7 +52,6 @@
 				  </thead>
 				  <tbody>
 
-				  	<?php $i=0; ?>
 				  	<?php foreach ($mahasiswa as $mhs) : ?>
 				    <tr>
 				    	
