@@ -1,7 +1,9 @@
 const flashData = $('.flash-data').data('flashdata');
 
 if (flashData) {
+
     Swal({
+        echo var_dump('ok');
         title: 'Data Mahasiswa ',
         text: 'Berhasil ' + flashData,
         type: 'success'
